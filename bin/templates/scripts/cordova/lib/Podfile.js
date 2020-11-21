@@ -397,7 +397,7 @@ Podfile.prototype.install = function (requirementsCheckerFunction) {
                 events.emit('verbose', toolOptions.ignoreMessage);
                 return Promise.resolve();
             } else {
-                return spawn('pod', ['install', '--verbose'], opts)
+                return spawn('arch -x86_64 pod', ['install', '--verbose'], opts)
                     .progress(stdio => {
                         if (stdio.stderr) { console.error(stdio.stderr); }
                         if (stdio.stdout) {
